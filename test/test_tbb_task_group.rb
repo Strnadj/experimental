@@ -10,9 +10,17 @@ describe TbbTaskGroup do
   end
 
   it 'task method accept block' do
-    ret = instance.addTask do
-      puts "AHOJ"
+    class TmpTest
+      def execute
+        puts "ahoj"
+      end
     end
+
+    g = TmpTest.new
+
+    ret = instance.addTask(g)
+
+    puts "Ret: #{ret}\n"
 
     ret.must_equal 5
   end

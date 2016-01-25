@@ -1,17 +1,13 @@
 #include "proxy.h"
 
-TbbProxy::TbbProxy() {
-
-};
-
 void TbbProxy::parallel_sort(Rice::Array &array) {
-  // tbb::parallel_sort(array.begin(), array.end());
+  Rice::Object arr[] = from_ruby<Rice::Array>(array);
 };
 
-void TbbTaskGroup::addTask() {
-  if (rb_block_given_p()) {
-    g.run([&] { Rice::protect(rb_yield); });
-  }
+void TbbTaskGroup::addTask(Rice::Object obj) {
+  rb_funcall(obj, rb_intern("execute"), 0);
+  /*g.run([&] {
+  });*/
 };
 
 void TbbTaskGroup::waitToGroup() {
