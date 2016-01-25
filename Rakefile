@@ -14,6 +14,7 @@ Hoe.spec 'tbb_ruby' do
   self.history_file = 'History.txt'
   self.extra_deps << [ 'rice', '~> 2.1.0' ]
   self.extra_dev_deps << [ 'rake-compiler', '>= 0' ]
+  self.extra_dev_deps << [ 'minitest', '>= 0' ]
 
   self.spec_extras = { extensions: ['ext/tbb_ruby/extconf.rb'] }
 

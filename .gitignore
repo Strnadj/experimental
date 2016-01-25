@@ -1,3 +1,5 @@
 local_compile.sh
 tmp/
 *.o
+*.bundle
+.byebug_history
