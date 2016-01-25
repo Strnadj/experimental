@@ -9,9 +9,10 @@ $CFLAGS << ' --std=c++11'
 # Process arguments
 dir_config('tbb')
 
+# TODO: Fix on darwin
 # Check library
-unless have_library('tbb')
-  abort 'Please install TBB library!'
-end
+#unless have_library('tbb')
+#  abort 'Please install TBB library!'
+#end
 
 create_makefile('tbb_ruby/tbb_ruby')
