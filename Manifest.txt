@@ -1,0 +1,8 @@
+.autotest
+History.txt
+Manifest.txt
+README.txt
+Rakefile
+bin/tbb_ruby
+lib/tbb_ruby.rb
+test/test_tbb_ruby.rb

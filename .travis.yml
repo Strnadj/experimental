@@ -1,0 +1,21 @@
+language: ruby
+
+before_install:
+  - sudo apt-get update -y
+
+rvm:
+  - 2.0.0
+  - 2.1.2
+  - 2.2.3
+  - 2.3.0
+
+before_script:
+  - gem update --system $RUBYGEMS_VERSION
+  - gem install rake-compiler rake hoe rice
+
+install:
+  - sudo apt-get install libtbb2
+
+script:
+  - rake compile
+  - rake test
